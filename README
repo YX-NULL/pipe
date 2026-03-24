@@ -217,3 +217,24 @@ so will most likely never work perfectly or be readable to a point where
 I would be comfortable with people using it in production code. It is
 the epitome of experimental, research code. Don't even think about using
 this in your project; it will probably be too buggy for any level of use.
+
+----pipeline(流水线模式)
+输入数据
+   |
+[Stage 1] --> [Stage 2] --> [Stage 3] --> ... --> [Stage N]
+   |             |             |                  |
+进程1         进程2         进程3              进程N
+   |
+输出数据
+
+----pipe_parallel(并行管道模型)
+输入数据
+   |
++-----------------------------+
+|   并行处理单元（多个）      |
+|  [Worker 1] [Worker 2] ...  |
++-----------------------------+
+   |        |         |
+   +--------+---------+
+            |
+         合并/输出
